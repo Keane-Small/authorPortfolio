@@ -184,7 +184,6 @@ body {
 .book-item img {
     width: 100%;
     height: auto;
-    border-radius: 4px;
 }
 
 .book-item p {
