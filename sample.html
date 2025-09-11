@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+  <title>Updated Hamburger Menu</title>
     <link rel="stylesheet" href="styles.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,16 +33,14 @@
     </ul>
   </nav>
 </div>
-<!-- HAMBURGER MENU -->
-<div class="hamburger-menu" id="hamburger-menu">
-  <div class="menu-bar1"></div>
-  <div class="menu-bar2"></div>
-  <div class="menu-bar3"></div>
+</header>
+<script src="contact.js">
+
+</script>
 </div>
-    </header>
- <header class="main-header">
-        <div class="info-box">
-            <h1>Lets Get In Touch!</h1>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>CONTACT US</h1>
         </div>
     </header>
     <main class="contact-main">
@@ -50,23 +49,28 @@
             <p>
                 Got a question about author? Are you interested in in any books by us? Have some suggestions or just want to say hi? Contact us:
             </p>
-            <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/xnnbwkeo" novalidate>
-                <input type="text" name="firstName" placeholder="First name" required>
-                <input type="text" name="lastName" placeholder="Last name" required>
-                <input type="email" name="email" placeholder="Your Email Address" required>
-                <input type="tel" name="phone" placeholder="Phone Number">
-                <textarea name="message" placeholder="Message" required></textarea>
-
-                <!-- optional subject for Formspree -->
-                <input type="hidden" name="_subject" value="New contact form submission">
-
+            <form class="contact-form">
+                <input type="text" placeholder="First name">
+                <input type="text" placeholder="Last name">
+                <input type="email" placeholder="Your Email Address">
+                <input type="text" placeholder="Phone Number">
+                <textarea placeholder="Message"></textarea>
                 <button type="submit">SUBMIT</button>
-                <div id="form-status" aria-live="polite" style="margin-top:8px;"></div>
             </form>
+        
         </section>
     </main>
     <footer class="main-footer">
-        <footer class="site-footer">
+        <div class="footer-cols">
+            <div>
+                <h4>Mailing Address</h4>
+                <p>123 Author Lane,</p>
+                <p>Booktown,</p>
+                <p>BK 12345</p>
+            </div>
+         
+        </div>
+            <footer class="site-footer">
     <div class="footer-content">
         <p>&copy; 2025 Author Name. All rights reserved.</p>
         <div class="footer-links">
@@ -74,7 +78,7 @@
             <a href="#terms">Terms of Service</a>
             <a href="#contact">Contact</a>
         </div>
+        
     </footer>
-    <script src="contact.js"></script>
 </body>
 </html>
