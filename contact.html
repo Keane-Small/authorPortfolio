@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="contact.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">MAYA ANGELOU</div>
+        <!-- MENU OVERLAY -->
+<div class="overlay overlay-slide-left" id="overlay">
+  <!-- MENU ITEMS -->
+  <nav>
+    <ul>
+      <li id="nav-1" class="slide-out-1 center">
+        <a href="./index.html" class="center">Home</a>
+      </li>
+      <li id="nav-2" class="slide-out-2 center">
+        <a href="#about" class="center" style="color:#937B66">About</a>
+      </li>
+      <li id="nav-3" class="slide-out-3 center">
+        <a href="#skills" class="center">Books</a>
+      </li>
+      <li id="nav-4" class="slide-out-4 center">
+        <a href="#projects" class="center" style="color:#937B66">Contact Me</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- HAMBURGER MENU -->
+<div class="hamburger-menu" id="hamburger-menu">
+  <div class="menu-bar1"></div>
+  <div class="menu-bar2"></div>
+  <div class="menu-bar3"></div>
+</div>
+    </header>
+ <header class="main-header">
+        <div class="info-box">
+            <h1>Lets Get In Touch!</h1>
+        </div>
+    </header>
+    <main class="contact-main">
+        <section class="contact-left">
+            <h2>Reach out to us!</h2>
+            <p>
+                Got a question about author? Are you interested in in any books by us? Have some suggestions or just want to say hi? Contact us:
+            </p>
+            <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/xnnbwkeo" novalidate>
+                <input type="text" name="firstName" placeholder="First name" required>
+                <input type="text" name="lastName" placeholder="Last name" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="Message" required></textarea>
+
+                <!-- optional subject for Formspree -->
+                <input type="hidden" name="_subject" value="New contact form submission">
+
+                <button type="submit">SUBMIT</button>
+                <div id="form-status" aria-live="polite" style="margin-top:8px;"></div>
+            </form>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <footer class="site-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Author Name. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+    <script src="contact.js"></script>
+</body>
+</html>

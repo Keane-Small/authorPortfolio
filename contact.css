@@ -1,0 +1,597 @@
+/* General improvements for better mobile display */
+body {
+    background-color: #FFFDF0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0; /* Remove fixed padding to allow for a full-width design */
+    color: #333;
+    /* Remove position: relative from body as it's not needed for the updated layout */
+}
+
+/* Header for positioning author and burger menu */
+.header {
+    display: flex;
+    justify-content: space-between; /* Pushes items to opposite ends */
+    align-items: center;
+    padding: 20px;
+    position: sticky; /* Keeps the header at the top when scrolling */
+    top: 0;
+    z-index: 500;
+    background-color: #FFFDF0;
+}
+
+/* Update author and burger menu to work with the new flex header */
+.author {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 25px;
+}
+
+.logo {
+    font-size: 28px;
+}
+
+a:link,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+/* HELPER CLASSES */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/***********************/
+/* NAVIGATION MENU */
+/***********************/
+
+/* OVERLAY */
+.overlay {
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100%);
+}
+
+/* NAV MENU ITEMS */
+nav ul {
+  height: 100vh;
+  height: 100svh;
+  list-style: none;
+}
+
+nav ul li {
+  height: 20%;
+}
+
+nav li:nth-of-type(1) {
+  background-color: #937B66;
+}
+
+nav li:nth-of-type(2) {
+  background-color: #FFFDF0;
+}
+
+nav li:nth-of-type(3) {
+  background-color: #937B66;
+}
+
+nav li:nth-of-type(4) {
+  background-color: #FFFDF0;
+}
+
+
+nav li a {
+  letter-spacing: 0.4rem;
+  font-size: 2rem;
+}
+
+nav li a:hover,
+nav li a:active {
+  transform: scale(1.2);
+}
+
+/***********************/
+/* NAV SLIDE IN ANIMATION */
+/***********************/
+
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/***********************/
+/* NAV SLIDE OUT ANIMATION */
+/***********************/
+
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/***********************/
+/* HAMBURGER MENU ANIMATION */
+/***********************/
+
+.hamburger-menu {
+  position: fixed;
+  top: 5px;
+  right: 2rem;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.menu-bar1,
+.menu-bar2,
+.menu-bar3 {
+  width: 2rem;
+  height: 2px;
+  background-color: black;
+  margin: 0.8rem 0;
+  transition: 0.4s;
+}
+
+.menu-bar2 {
+  width: 2rem;
+  margin-left: auto;
+}
+
+/* ROTATE FIRST BAR */
+.active .menu-bar1 {
+  transform: rotate(-45deg) translate(-0.7rem, 0.8rem);
+}
+
+/* FADE OUT SECOND BAR */
+.active .menu-bar2 {
+  opacity: 0;
+}
+
+/* ROTATE LAST BAR */
+.active .menu-bar3 {
+  transform: rotate(45deg) translate(-0.6rem, -0.8rem);
+}
+
+
+
+/**************************/
+/* MED
+
+
+/* The info box needs to be part of the flow now */
+.info-box {
+    width: 100%;
+    height: 50vh;
+    background-color: #937B66;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    /* Add this line with the imported font and a fallback */
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+    .author {
+        font-size: 16px;
+    }
+
+    .info-box {
+        width: 95%; /* Make it slightly wider on small screens */
+    }
+}
+
+        .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* This hides the menu off-screen to the right */
+    width: 250px;
+    height: 100%;
+    background-color: #555;
+    padding-top: 60px;
+    transition: right 0.3s ease;
+    z-index: 1000; /* Ensure it's on top of other content */
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu.active {
+    right: 0; /* Slide the menu into view */
+}
+
+.nav-menu a {
+    color: #FFFDF0;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-bottom: 1px solid #777;
+}
+
+.nav-menu a:hover {
+    background-color: #777;
+}
+
+/* Update the main content container to use Flexbox */
+.content {
+    display: flex; /* Makes the content a flex container */
+    justify-content: center; /* Horizontally centers the items */
+    align-items: flex-start; /* Aligns items to the top */
+    padding: 20px;
+    margin-top: 20px;
+
+}
+
+.image-container {
+    width: 35%; /* Image takes up 45% of the container's width */
+    margin-right: 50px; /* Space between the image and the text */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: 45%;
+    object-fit: cover;
+    display: block;
+}
+
+.text-container {
+    flex: 1; /* This is the key: it makes the text take up all remaining space */
+    margin-right: 150px;
+}
+.text-container h2 {
+    font-size: 100px;
+}
+
+.text-container p {
+    font-size: 28px;
+}
+
+/* Add a media query to stack content vertically on smaller screens */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+        align-items: center;
+    }
+    .image-container {
+        width: 90%; /* Image takes more width on smaller screens */
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Styling for the books section */
+.books-container {
+    max-width: 1200px;
+    margin: 40px auto; /* Centers the container and adds vertical spacing */
+    padding: 20px;
+    text-align: center;
+}
+
+.books-container h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Creating the grid for the books */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates a responsive grid that fits as many columns as possible */
+    gap: 20px; /* Space between the grid items */
+    justify-items: center;
+}
+
+.book-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+}
+
+.book-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styling for the footer */
+.site-footer {
+    background-color: #937B66;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px; /* Adds space above the footer */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Books Section */
+
+.book-cover {
+  position: relative; 
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+
+.front-page,
+.back-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* object-fit: cover; */
+  transition: all 0.6s ease;
+  border-radius: 5px;
+}
+
+/* Default: show front fully */
+.front-page {
+  width: 100%;
+  z-index: 2;
+}
+
+/* Hide back */
+.back-page {
+  width: 0;
+  z-index: 1;
+}
+
+/* On hover → split view */
+.book-item:hover .front-page {
+  width: 50%;
+}
+
+.book-item:hover .back-page {
+  width: 50%;
+  left: 50%;
+}
+
+/* Book section Home */
+
+.book-coverHome {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 5px;
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.2); */
+}
+
+.books-gridHome {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Styling for contact form  */
+
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* Center horizontally */
+    justify-content: flex-start; /* Align to top */
+    gap: 0;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contact-left {
+    background: #937B66;
+    padding: 30px 30px 30px 30px;
+    border-radius: var(--border-radius);
+    min-width: 320px;
+    max-width: 500px;            /* Limit width for better centering */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 40px auto 0 auto;    /* Add space below heading */
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* Center form content */
+}
+
+.contact-left h2, .contact-left p, .contact-form {
+    width: 100%;
+    text-align: center;
+}
+
+.contact-right {
+    background: var(--section-bg);
+    padding: 30px 30px 30px 30px;
+    border-radius: var(--border-radius);
+    flex: 1;
+    min-width: 320px;
+    box-sizing: border-box;
+}
+.contact-left h2, .contact-right h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+.contact-left p, .contact-right p {
+    font-size: 1em;
+    margin-bottom: 18px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.contact-form input,
+.contact-form textarea {
+    background:white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.contact-form textarea {
+    min-height: 70px;
+    border: 2px solid var(--accent);
+}
+
+
+.header-content h1 {
+    font-size: 3em;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+/* Make the contact form submit look like a styled button */
+.contact-form button[type="submit"] {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #5c4c3e; /* matches accent in your HTML */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    transition: background .18s ease, transform .06s ease, box-shadow .18s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background: #7f6552;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.14);
+}
+
+.contact-form button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+.contact-form button[type="submit"]:focus {
+    outline: 3px solid rgba(147,123,102,0.18);
+    outline-offset: 2px;
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
